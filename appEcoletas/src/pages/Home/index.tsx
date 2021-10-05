@@ -4,11 +4,11 @@ import {View, Text, StyleSheet, Image, ImageBackground} from "react-native";
 
 import {Feather as Icon} from "@expo/vector-icons";
 
-import {RectButton} from "react-native-gesture-handler";
+import {RectButton} from 'react-native-gesture-handler';
 
-const Home = () => {
+export default function Home(){
     return(
-        <ImageBackground source={require('../../assets/home-background.png')}
+<ImageBackground source={require('../../assets/home-background.png')}
             style={styles.container}
             imageStyle={{width: 274, height: 368}}
             >
@@ -30,7 +30,6 @@ const Home = () => {
 
     );
 }
-export default Home;
 
 const styles = StyleSheet.create({
     container: {
