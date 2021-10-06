@@ -7,6 +7,9 @@ import {Roboto_400Regular, Roboto_500Medium} from '@expo-google-fonts/roboto';
 
 import Home from './src/pages/Home';
 
+//importar a tela de points
+import Points from "./src/pages/Points";
+
 export default function App() {
   const [fontsLoaded] = useFonts({
     Roboto_400Regular,
@@ -20,7 +23,7 @@ export default function App() {
     return(
       <>
       <StatusBar style='dark' backgroundColor='transparent' translucent/>
-      <Home/>
+      <Points/>
       </>
     );
   }//Fecha o Else

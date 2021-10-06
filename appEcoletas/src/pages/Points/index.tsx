@@ -14,7 +14,7 @@ import {SvgUri} from 'react-native-svg';
 
 export default function Points(){
 
-    const navigation = useNavigation();
+    /*const navigation = useNavigation();
 
     //Fução que volta para tela anterior
     function handleNavigatorBack(){
@@ -24,43 +24,71 @@ export default function Points(){
     //função que abre tela de detalhes ao clicar no mapa
     function handlerNavigateDetail(){
         navigation.navigate('Detail');
-    }
+    }*/
 
     return(
         <>
-        <View style={styles.container}>
-            <TouchableOpacity onPress={handleNavigatorBack}>
+        <View style={Styles.container}>
+            <TouchableOpacity >
                 <Icon name="arrow-left" size={20} color="#34cb79"/>
             </TouchableOpacity>
 
-            <Text style={styles.title}>Bem Vindo</Text>
-            <Text style={styles.description}>Encontre no mapa um ponto de coleta</Text>
+            <Text style={Styles.title}>Bem Vindo</Text>
+            <Text style={Styles.description}>Encontre no mapa um ponto de coleta</Text>
 
-            <View style={styles.mapContainer}>
-                <MapView style={styles.map} initialRegion={{
+            <View style={Styles.mapContainer}>
+                <MapView style={Styles.map} initialRegion={{
                     latitude: -23.4460282,
                     longitude: -46.9172153,
                     latitudeDelta: 0.014,
                     longitudeDelta: 0.014
                 }}> 
 
-                <Marker onPress={handlerNavigateDetail} 
+                <Marker 
                 coordinate={{latitude: -23.4460282, longitude: - 46.9172153}}>
-                    <View style={styles.mapMakerContainer}>
-                        <Image style={styles.mapMakerImage} source={{uri: 'https://f.i.uol.com.br/fotografia/2019/08/16/15659855445d570b082fe09_1565985544_3x2_md.jpg'}}/>
-                        <Text ></Text>
+                    <View style={Styles.mapMakerContainer}>
+                        <Image style={Styles.mapMakerImage} source={{uri: 'https://f.i.uol.com.br/fotografia/2019/08/16/15659855445d570b082fe09_1565985544_3x2_md.jpg'}}/>
+                        <Text style={Styles.mapMakerTitle}>Centro Histórico</Text>
                     </View>
                 </Marker>
                 </MapView>
             </View>
-        </View>
+            <View style={Styles.itemsContainer}>
+                <ScrollView horizontal showsHorizontalScrollIndicator={false}
+                contentContainerStyle={{paddingHorizontal:20}}>
+                    <TouchableOpacity style={Styles.item} onPress={()=>{}}>
+                        <Image width={42} height={42} source={require('../../assets/icones/bateria.png')}/>
+                        <Text style={Styles.itemTitle}>Baterias</Text>
+                    </TouchableOpacity>
 
+                    <TouchableOpacity style={Styles.item} onPress={()=>{}}>
+                    <Image width={42} height={42} source={require('../../assets/icones/eletronicos.png')}/>
+                        <Text style={Styles.itemTitle}>Eletrônicos</Text>
+                    </TouchableOpacity>
+
+                    <TouchableOpacity style={Styles.item} onPress={()=>{}}>
+                    <Image width={42} height={42} source={require('../../assets/icones/oleo.png')}/>
+                        <Text style={Styles.itemTitle}>Óleo</Text>
+                    </TouchableOpacity>
+
+                    <TouchableOpacity style={Styles.item} onPress={()=>{}}>
+                    <Image width={42} height={42} source={require('../../assets/icones/organicos.png')}/>
+                        <Text style={Styles.itemTitle}>Orgânicos</Text>
+                    </TouchableOpacity>
+
+                    <TouchableOpacity style={Styles.item} onPress={()=>{}}>
+                    <Image width={42} height={42} source={require('../../assets/icones/papel.png')}/>
+                        <Text style={Styles.itemTitle}>Papéis</Text>
+                    </TouchableOpacity>
+                </ScrollView>
+            </View>
+        </View>
         </>
     )
 
 }
 
-const styles = StyleSheet.create({
+const Styles = StyleSheet.create({
     container: {
         flex: 1,
         paddingHorizontal: 32,
@@ -103,8 +131,8 @@ const styles = StyleSheet.create({
     },
     mapMakerImage: {
         width: 120,
-        height: 45
-        resizeMode: 'cover',
+        height: 45,
+        resizeMode: 'cover'
     },
     mapMakerTitle: {
         flex: 1,
@@ -116,10 +144,10 @@ const styles = StyleSheet.create({
     itemsContainer: {
         flexDirection: 'row',
         marginTop: 16,
-        margimBottom: 32,
+        marginBottom: 32,
     },
     item: {
-        backgroundColor: '#fff',
+        backgroundColor: '#dcf9ea',
         borderWidth: 2,
         borderColor: '#eee',
         height: 120,
@@ -128,7 +156,7 @@ const styles = StyleSheet.create({
         paddingHorizontal: 16,
         paddingTop: 20,
         paddingBottom: 16,
-        marginRigth: 8,
+        marginRight: 8,
         alignItems: 'center',
         justifyContent: 'space-between',
         textAlign: 'center'
