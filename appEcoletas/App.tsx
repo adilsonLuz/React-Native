@@ -10,6 +10,10 @@ import Home from './src/pages/Home';
 //importar a tela de points
 import Points from "./src/pages/Points";
 
+ //importar a tela Details
+ import Details from './src/pages/Details';
+
+
 export default function App() {
   const [fontsLoaded] = useFonts({
     Roboto_400Regular,
@@ -23,7 +27,7 @@ export default function App() {
     return(
       <>
       <StatusBar style='dark' backgroundColor='transparent' translucent/>
-      <Points/>
+      <Details/>
       </>
     );
   }//Fecha o Else
