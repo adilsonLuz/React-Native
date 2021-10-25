@@ -6,7 +6,17 @@ import {Feather as Icon} from "@expo/vector-icons";
 
 import {RectButton} from 'react-native-gesture-handler';
 
+//importar useNavigation da lib <react-navigation
+import { useNavigation } from "@react-navigation/native";
+
 export default function Home(){
+
+    const navigation = useNavigation();
+
+    function handlerNavigationPoints(){
+        navigation.navigate('Points');
+    }
+
     return(
 <ImageBackground source={require('../../assets/home-background.png')}
             style={styles.container}
@@ -19,7 +29,7 @@ export default function Home(){
                          forma eficiente</Text>
                 </View>
                 <View style={styles.footer}>
-                    <RectButton style={styles.button} onPress={() => {}}>
+                    <RectButton style={styles.button} onPress={handlerNavigationPoints}>
                         <View style={styles.buttonIcon}>
                             <Icon name="arrow-right" color='#fff' size={24}/>
                         </View>

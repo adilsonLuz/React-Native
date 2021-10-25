@@ -13,6 +13,8 @@ import Points from "./src/pages/Points";
  //importar a tela Details
  import Details from './src/pages/Details';
 
+ import Routes from './src/routes';
+
 
 export default function App() {
   const [fontsLoaded] = useFonts({
@@ -27,7 +29,7 @@ export default function App() {
     return(
       <>
       <StatusBar style='dark' backgroundColor='transparent' translucent/>
-      <Details/>
+      <Routes/>
       </>
     );
   }//Fecha o Else

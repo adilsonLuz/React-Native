@@ -14,22 +14,22 @@ import {SvgUri} from 'react-native-svg';
 
 export default function Points(){
 
-    /*const navigation = useNavigation();
+    const navigation = useNavigation();
 
-    //Fução que volta para tela anterior
-    function handleNavigatorBack(){
+    //Fução que volta para tela home
+    function Voltar(){
         navigation.goBack();
     }
 
     //função que abre tela de detalhes ao clicar no mapa
-    function handlerNavigateDetail(){
-        navigation.navigate('Detail');
-    }*/
+    function openDetails(){
+        navigation.navigate('Details');
+    }
 
     return(
         <>
         <View style={Styles.container}>
-            <TouchableOpacity >
+            <TouchableOpacity onPress={Voltar}>
                 <Icon name="arrow-left" size={20} color="#34cb79"/>
             </TouchableOpacity>
 
@@ -44,7 +44,7 @@ export default function Points(){
                     longitudeDelta: 0.014
                 }}> 
 
-                <Marker 
+                <Marker onPress={openDetails}
                 coordinate={{latitude: -23.4460282, longitude: - 46.9172153}}>
                     <View style={Styles.mapMakerContainer}>
                         <Image style={Styles.mapMakerImage} source={{uri: 'https://f.i.uol.com.br/fotografia/2019/08/16/15659855445d570b082fe09_1565985544_3x2_md.jpg'}}/>

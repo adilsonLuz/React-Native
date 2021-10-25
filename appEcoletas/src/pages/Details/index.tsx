@@ -11,14 +11,14 @@ export default function Details(){
     const navigation = useNavigation();
 
     //função para voltar para tela anterior
-    function handleNavigationBack(){
+    function Voltar(){
         navigation.goBack();
     }
 
     return(
         <SafeAreaView style={{flex:1}}>
         <View style={styles.container}>
-            <TouchableOpacity onPress={handleNavigationBack}>
+            <TouchableOpacity onPress={Voltar}>
                 <Icon name='arrow-left' size={20} color='#34cb79'/>
             </TouchableOpacity>
             <Image style={styles.pointImage} source={{uri: 'https://f.i.uol.com.br/fotografia/2019/08/16/15659855445d570b082fe09_1565985544_3x2_md.jpg'}}/>
@@ -53,7 +53,7 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         padding: 32,
-        paddingTop: 20,
+        paddingTop: 35,
     },
     pointImage: {
         width: '100%',
@@ -94,7 +94,7 @@ const styles = StyleSheet.create({
         borderColor: '#999',
         paddingVertical: 20,
         paddingHorizontal: 32,
-        paddingBottom: 0,
+        paddingBottom: 15,
         flexDirection: 'row',
         justifyContent: 'space-between',
     },
