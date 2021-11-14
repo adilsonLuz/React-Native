@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 
 import Constants from 'expo-constants';
 
@@ -11,6 +11,8 @@ import { useNavigation} from '@react-navigation/native';
 import MapView, {Marker} from 'react-native-maps';
 
 import {SvgUri} from 'react-native-svg';
+
+import axios from 'axios';
 
 export default function Points(){
 
@@ -25,6 +27,32 @@ export default function Points(){
     function openDetails(){
         navigation.navigate('Details');
     }
+
+    useEffect(()=> {
+        console.log('Executou o useEffect');
+
+        //chama a função listarCategorias
+        listarCategorias();
+
+    },[]);
+
+
+    //função que lista as categorias
+    async function listarCategorias(){
+        try {
+            //1º passo - determinar a url
+            let url = "http://192.168.56.1/api-appecoleta/lista-categoria.php";
+
+            //2º passo - realiza a requisição
+            let response = await axios.get(url);
+
+            //3º passo - exibir o resultado
+            console.log(response.data);
+
+        } catch (error) {
+            console.log('Erro: ' + error)
+        }
+    }//fecha a função listarCategorias
 
     return(
         <>
